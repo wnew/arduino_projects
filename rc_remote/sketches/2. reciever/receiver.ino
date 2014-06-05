@@ -9,24 +9,24 @@
 // Author: Mike McCauley (mikem@open.com.au)
 // Copyright (C) 2008 Mike McCauley
 // $Id: receiver.pde,v 1.3 2009/03/30 00:07:24 mikem Exp $
+const int LED_PIN = 13;
+
 
 #include <VirtualWire.h>
-#undef int
-#undef abs
-#undef double
-#undef float
-#undef round
 
 void setup()
 {
     Serial.begin(9600);	// Debugging only
     Serial.println("setup recv");
 
+    vw_set_rx_pin(12);
+
     // Initialise the IO and ISR
     vw_set_ptt_inverted(true); // Required for DR3100
     vw_setup(2000);	 // Bits per sec
 
     vw_rx_start();    // Start the receiver PLL running
+    pinMode(13, OUTPUT);
 }
 
 void loop()
@@ -37,7 +37,7 @@ void loop()
     if (vw_get_message(buf, &buflen)) // Non-blocking
     {
 	    int i;
-       digitalWrite(13, true); // Flash a light to show received good message
+      digitalWrite(LED_PIN, true); // Flash a light to show received good message
 	    // Message with a good checksum received, dump it.
 	    Serial.print("Got: ");
 	
@@ -47,6 +47,6 @@ void loop()
 	       Serial.print(" ");
 	    }
 	    Serial.println("");
-       digitalWrite(13, false);
+      digitalWrite(LED_PIN, false);
     }
 }
