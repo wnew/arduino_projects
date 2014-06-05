@@ -1,8 +1,18 @@
-============
+=============
 Description
-============
+=============
 This repo stores the details and code of the implementation of a full remote
-control chain based on the arduino platform. 
+control chaini for a car, it is based on the arduino platform. This includes
+every thing from the remote control, the wireless link and the motor driver
+control.  
+
+================
+Remote Control
+================
+The remote control is a Wii Nunchuch, which has a 2 axis joystick, a gyroscope
+and 2 push buttons. This design will only use the joystick for control as the 
+car only needs forward/backward and left/right which is perfect for just the
+joystck.
 
 ==============
 Wireless link
@@ -16,24 +26,17 @@ Motor Controller
 The motor controller shield is the Adafruit v1 motor controller shield based
 on the L293D IC. This shield supports stepper motors, servos and dc motors.
 
-=================
-
-=================
-
-
-
-nunchuck--->Arduino--->NFR24L01 -)))   (((- NRF24L01--->Arduino--->Motor Shield--->Motors
-nunchuck--->Arduino--->433MHz Transmitter -)))  (((- 433MHz Recviever--->Arduino--->Motor Shield--->Motors
 
 1. Nunchuck ---> Arduino
-2. Arduino  ---> Motor Shield ---> Motor
-3. Arduino  ---> NRF          ---> -)))  (((-     NRF ---> Arduino
-4. Nunchuck ---> Arduino      ---> Motor Shield       ---> Motors
-5. Nunchuck ---> Arduino      ---> NRF -)))  (((- NRF ---> Motor Shield ---> Motors
+2. Arduino  ---> Motor Shield       ---> Motor
+3. Arduino  ---> NRF -)))  (((- NRF ---> Arduino
+4. Nunchuck ---> Arduino            ---> Motor Shield       ---> Motors
+5. Nunchuck ---> Arduino            ---> NRF -)))  (((- NRF ---> Arduino ---> Motor Shield ---> Motors
+5. Nunchuck ---> Arduino            ---> 433MHz Tran -)))  (((- 433MHz Recv                ---> Arduino ---> Motor Shield ---> Motors
+
 
 1. Get the Nunchuck outputs and print to the serial port
 2. Get the motor shield working with motors
 3. Get the wireless link working
 4. Integrate the nunchuck and the motor shield
 5. Integrate the wireless link
-
