@@ -1,3 +1,14 @@
+//===========================================================================//
+//===========================================================================//
+//                                                                           //
+//    Sketch: Arduino Nunchuck                                               //
+//    Date: Oct 2013                                                         //
+//    Description: This sketch reports the status of the inputs from the wii //
+//                 nunchuck                                                  //
+//                                                                           //
+//===========================================================================//
+//===========================================================================//
+
 // http://hacknmod.com/hack/real-time-diy-pan-tilt-camera-with-arduino-wii-nunchuck/
 
 #include <Wire.h>
@@ -34,8 +45,7 @@ long pwbuffpos = 0;
 long pwbuff2[pwbuffsize];
 long pwbuffpos2 = 0;
 
-void setup()
-{
+void setup() {
     Serial.begin (19200);
     Wire.begin ();
     nunchuck_init ();
@@ -47,8 +57,7 @@ void setup()
     Serial.print ("Finished setup\n");
 }
 
-void nunchuck_init()
-{
+void nunchuck_init() {
     Wire.beginTransmission (0x52);
     Wire.write (0x40);
     Wire.write (0x00);  
@@ -64,8 +73,7 @@ void send_zero()
 
 int t = 0;
 
-void loop()
-{
+void loop() {
     t++;
     long last = millis();
 
@@ -144,8 +152,7 @@ void updateServo() {
 }
 
 int i=0;
-void printNunchuckData()
-{
+void printNunchuckData() {
     int joy_x_axis = outbuf[0];
     int joy_y_axis = outbuf[1];
     int accel_x_axis = outbuf[2]; // * 2 * 2; 
@@ -204,13 +211,12 @@ void printNunchuckData()
     i++;
 }
 
-char nunchuk_decode_byte (char x)
-{
+char nunchuk_decode_byte (char x) {
     x = (x ^ 0x17) + 0x17;
     return x;
 }
 
-void muovi (){
+void muovi () {
     float tilt = (700 - outbuf[3]*2*2);
     float tilt2 = outbuf[2]*2*2;
 
@@ -225,7 +231,6 @@ void muovi (){
     
     if( ++pwbuffpos == pwbuffsize ) pwbuffpos = 0;
     if( ++pwbuffpos2 == pwbuffsize ) pwbuffpos2 = 0;
-
 
     pulseWidth=0;
     pulseWidth2=0;

@@ -1,0 +1,39 @@
+============
+Description
+============
+This repo stores the details and code of the implementation of a full remote
+control chain based on the arduino platform. 
+
+==============
+Wireless link
+==============
+The aim is to support both the NRF24L01 devices and the more basic 433MHz
+reciever and transmitter modules.
+
+=================
+Motor Controller
+=================
+The motor controller shield is the Adafruit v1 motor controller shield based
+on the L293D IC. This shield supports stepper motors, servos and dc motors.
+
+=================
+
+=================
+
+
+
+nunchuck--->Arduino--->NFR24L01 -)))   (((- NRF24L01--->Arduino--->Motor Shield--->Motors
+nunchuck--->Arduino--->433MHz Transmitter -)))  (((- 433MHz Recviever--->Arduino--->Motor Shield--->Motors
+
+1. Nunchuck ---> Arduino
+2. Arduino  ---> Motor Shield ---> Motor
+3. Arduino  ---> NRF          ---> -)))  (((-     NRF ---> Arduino
+4. Nunchuck ---> Arduino      ---> Motor Shield       ---> Motors
+5. Nunchuck ---> Arduino      ---> NRF -)))  (((- NRF ---> Motor Shield ---> Motors
+
+1. Get the Nunchuck outputs and print to the serial port
+2. Get the motor shield working with motors
+3. Get the wireless link working
+4. Integrate the nunchuck and the motor shield
+5. Integrate the wireless link
+

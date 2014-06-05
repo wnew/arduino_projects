@@ -12,7 +12,6 @@
 //===========================================================================//
 //===========================================================================//
 
-
 //===========
 // #includes
 //===========
@@ -21,17 +20,33 @@
 #include <TimerOne.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_PCD8544.h>
+#include <LiquidCrystal.h>
 
-
-//===========
-// LCD Pins
-//===========
+//=================
+// Nokia LCD Pins
+//=================
 // pin 8 - Serial clock out (SCLK)
 // pin 7 - Serial data out (DIN)
 // pin 6 - Data/Command select (D/C)
 // pin 5 - LCD chip select (CS)
 // pin 3 - LCD reset (RST)
-Adafruit_PCD8544 display = Adafruit_PCD8544(8, 7, 6, 5, 3);
+//Adafruit_PCD8544 display = Adafruit_PCD8544(8, 7, 6, 5, 3);
+
+//=================
+// 2x16 LCD Pins
+//=================
+//  The circuit:
+// * LCD RS pin to digital pin 12
+// * LCD Enable pin to digital pin 11
+// * LCD D4 pin to digital pin 5
+// * LCD D5 pin to digital pin 4
+// * LCD D6 pin to digital pin 3
+// * LCD D7 pin to digital pin 2
+// * LCD R/W pin to ground
+// * 10K resistor:
+// * ends to +5V and ground
+// * wiper to LCD VO pin (pin 3)
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 
 //================
@@ -73,11 +88,14 @@ void setup()
   Serial.begin(9600);
   setupSD();
   
-  // lcd setup
-  display.begin();
-  display.setContrast(20);
-  display.clearDisplay();
-  display.display();
+  // nokia lcd setup
+  //display.begin();
+  //display.setContrast(20);
+  //display.clearDisplay();
+  //display.display();
+  
+  // 2x16 lcd display
+  lcd.begin(16, 2);
 }
 
 long lastPollTime = 0;
@@ -167,10 +185,10 @@ void writeToSD (String dataString) {
 }
 
 
-//===========================================
-// Writes the sesnor percentages to the lcd
-//===========================================
-void writeToLCD(int sensor0, int sensor1, int sensor2, int sensor3, int solenoidState) {
+//=================================================
+// Writes the sesnor percentages to the nokia lcd
+//=================================================
+/*void writeToLCD(int sensor0, int sensor1, int sensor2, int sensor3, int solenoidState) {
   // congifure lcd 
   display.clearDisplay();
   display.setTextSize(2);
@@ -188,6 +206,24 @@ void writeToLCD(int sensor0, int sensor1, int sensor2, int sensor3, int solenoid
   display.println();
   // send to display
   display.display();
+}*/
+
+
+//================================================
+// Writes the sesnor percentages to the 2x16 lcd
+//================================================
+void writeToLCD(int sensor0, int sensor1, int sensor2, int sensor3, int solenoidState) {
+  lcd.setCursor(0, 0);
+  lcd.print(String(sensor0) + " " + String(sensor1));
+  lcd.setCursor(8, 0);
+  lcd.print("Water 12");
+  lcd.setCursor(0, 1);
+  lcd.print(String(sensor2) + " " + String(sensor3));
+  lcd.setCursor(9,1);
+  if (solenoidState == 0)
+    lcd.print("on   34");
+  else
+    lcd.print("off");
 }
 
 
