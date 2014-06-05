@@ -1,5 +1,5 @@
 =============
-Description
+ Description
 =============
 This repo stores the details and code of the implementation of a full remote
 control chaini for a car, it is based on the arduino platform. This includes
@@ -7,22 +7,22 @@ every thing from the remote control, the wireless link and the motor driver
 control.  
 
 ================
-Remote Control
+ Remote Control
 ================
 The remote control is a Wii Nunchuch, which has a 2 axis joystick, a gyroscope
 and 2 push buttons. This design will only use the joystick for control as the 
 car only needs forward/backward and left/right which is perfect for just the
 joystck.
 
-==============
-Wireless link
-==============
+===============
+ Wireless link
+===============
 The aim is to support both the NRF24L01 devices and the more basic 433MHz
 reciever and transmitter modules.
 
-=================
-Motor Controller
-=================
+==================
+ Motor Controller
+==================
 The motor controller shield is the Adafruit v1 motor controller shield based
 on the L293D IC. This shield supports stepper motors, servos and dc motors.
 
