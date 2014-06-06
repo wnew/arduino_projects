@@ -64,12 +64,12 @@ void loop() {
       digitalWrite(LED_PIN, true); // Flash a light to show received good message
 	  
       // Message with a good checksum received, dump it.
-	  Serial.print("Got: ");
-	  for (i = 0; i < buflen; i++) {
+      Serial.print("Got: ");
+      for (i = 0; i < buflen; i++) {
          Serial.print(buf[i], HEX);
          Serial.print(" ");
       }
-	  Serial.println("");
+      Serial.println("");
       digitalWrite(LED_PIN, false);
    }
 }
