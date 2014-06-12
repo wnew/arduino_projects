@@ -16,6 +16,7 @@
 #include <Wire.h>
 #include <ArduinoNunchuk.h>
 #include <AFMotor.h>
+#include <Servo.h>
 
 //==========
 // #defines
@@ -27,7 +28,8 @@
 //================
 // initiate DC motor controllers
 AF_DCMotor motor2(2);
-AF_DCMotor motor3(3);
+// DC hobby servo
+Servo servo;
 // initiate nunchuk object
 ArduinoNunchuk nunchuk = ArduinoNunchuk();
 
@@ -38,10 +40,10 @@ void setup() {
    Serial.begin(BAUDRATE);
    Serial.println("Starting...");
    nunchuk.init();
-   motor2.setSpeed(200);   // turn on DC motor #2
-   motor2.run(RELEASE);
    motor3.setSpeed(200);   // turn on DC motor #3
    motor3.run(RELEASE);
+   // turn on servo
+   servo.attach(10);
 }
 
 //===========
@@ -49,24 +51,15 @@ void setup() {
 //===========
 void loop() {
    nunchuk.update();
-   int analogY = nunchuk.analogY;
    int analogX = nunchuk.analogX;
-
-   //Serial.println(analogY);
+   int analogY = nunchuk.analogY;
    if (analogY < 128) {
       motor2.run(BACKWARD);
-      motor2.setSpeed(map(analogY,128,255,254,0));
+      motor2.setSpeed(map(analogY, 0, 127, 254, 0));
    } else {
       motor2.run(FORWARD);
-      motor2.setSpeed(map(analogY,0,127,0,254));
+      motor2.setSpeed(map(analogY, 128, 255, 0, 254));
    }
-   if (analogX < 128) {
-      motor3.run(BACKWARD);
-      motor3.setSpeed(map(analogX,128,255,254,0));
-      Serial.println(map(analogX,128,255,254,0));
-   } else {
-      motor3.run(FORWARD);
-      motor3.setSpeed(map(analogX,0,127,0,254));
-      Serial.println(map(analogX,0,127,0,254));
-   }
+   servo.write(map(analogX, 0, 255, 45, 135));
+   delay(15);
 }
