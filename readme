@@ -1,1 +1,48 @@
-A repo for random arduino sketches
+This is a repo for all my random arduino projects
+
+
+
+
+
+
+
+
+//===================================
+// Project Ideas Still to Implement
+//===================================
+
+Electriciy management system
+==============================
+Measuring and plotting household power usage. Using the arduino and current sensors.
+Using this data to optimise the usage.
+
+
+Wireless speaker setup
+========================
+Centralised music system which can play music in any room wirelessly, contolled via mobile phone.
+Cell Phone -> Wireless to network -> Music Server -> Stream music to different rooms (How?)
+
+
+Media PC attached to TV
+=========================
+Device running XBMC to manage media. (This is more of a RaspberryPi project)
+
+
+Arduino Controlled Headlamp
+=============================
+This would need to use a pro micro
+Control brighness using a brightness sensor (LDR etc)
+Monitor battery charge
+
+
+
+Arduino Controlled Fencing Box
+================================
+
+
+
+Arduino Controlled Switch Mode Power Supply
+=============================================
+
+
+

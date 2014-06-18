@@ -1,0 +1,32 @@
+=============
+ Description
+=============
+This project is an arduino based soil moisture controller and logger. It logs
+the soil moisture to an SD card and opens a solenoid to allow watering of the
+soil if the moisture drops below a certain threshold. The moisture values and
+the current state of the solenoid are displayed on either a Nokia 5510 LCD or
+a 2x16 LCD.
+
+
+=======================
+ Hardware Requirements
+=======================
+1 Arduino
+1 Micro SD Card adapter
+1 Solenoid
+4 Moisture sensors
+1 Nokia 5510 LCD or 2x16 LCD
+
+
+=====================
+ Percentage Complete
+=====================
+        
+        100 %
+
+
+=================
+ Features to add
+=================
+Connect to a network using the Ethernet shield (Not planning to do anytime soon)
+

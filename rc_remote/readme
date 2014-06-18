@@ -2,9 +2,8 @@
  Description
 =============
 This repo stores the details and code of the implementation of a full remote
-control chaini for a car, it is based on the arduino platform. This includes
-every thing from the remote control, the wireless link and the motor driver
-control.  
+control chaini for a car, based on the arduino platform. This includes every
+thing from the remote control, the wireless link and the motor driver control.
 
 ================
  Remote Control
