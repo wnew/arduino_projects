@@ -1,0 +1,36 @@
+=============
+ Description
+=============
+The intent of this project is to create a mouse that uses a gyroscope,
+accellerometer and a megnetometer to add more axis of motion to a conventional
+mouse. The idea is to modify a standard optical mouse and to add an arduino
+pro micro to it.
+
+
+============
+ Pro Micro
+============
+The pro micro can function as a keyboard or a mouse and issue commands to the
+pc as such it makes sense that the arduino forwards on all the standard mouse
+commands and adds the gyro/accel/mag commands.
+
+
+===============
+ Wireless link
+===============
+This feature could be implemented in the future
+
+
+======================
+ Implementation Steps
+======================
+1. Integrate gyro with pro micro and move mouse/send keyboard key presses
+2. Route standard mouse data via pro micro
+
+
+=====================
+ Percentage Complete
+=====================
+
+         0%
+
