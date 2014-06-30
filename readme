@@ -1,48 +1,103 @@
 This is a repo for all my random arduino projects
 
-
-
-
-
-
-
-
 //===================================
-// Project Ideas Still to Implement
+// All Project Ideas
 //===================================
 
-Electriciy management system
+ Wireless Home Automation
+=========================
+Arduino controlled home automation, maybe with a RaspPi or Due and Ethernet
+shield as the main control board. With wireless control from your android
+phone.
+
+
+ Electriciy Management System
 ==============================
-Measuring and plotting household power usage. Using the arduino and current sensors.
-Using this data to optimise the usage.
+Measuring and plotting household power usage. Using the arduino and current
+sensors. Use this data to optimise the usage.
 
 
-Wireless speaker setup
+ Wireless Speaker Setup
 ========================
-Centralised music system which can play music in any room wirelessly, contolled via mobile phone.
+Centralised music system which can play music in any room wirelessly, contolled
+via mobile phone. 
 Cell Phone -> Wireless to network -> Music Server -> Stream music to different rooms (How?)
 
 
-Media PC attached to TV
+ Media PC attached to TV
 =========================
 Device running XBMC to manage media. (This is more of a RaspberryPi project)
+Will also need to set up a remote control and a media server. 
 
 
-Arduino Controlled Headlamp
+ Arduino Controlled Headlamp
 =============================
 This would need to use a pro micro
-Control brighness using a brightness sensor (LDR etc)
+Control brighness using some brightness sensor (LDR etc)
 Monitor battery charge
 
 
-
-Arduino Controlled Fencing Box
+ Arduino Controlled Fencing Box
 ================================
+This is a basic fencing scoring box controlled by an Arduino. It is used to 
+sense when a touch is made in a fencing bout.
 
 
-
-Arduino Controlled Switch Mode Power Supply
+ Arduino Controlled Switch Mode Power Supply
 =============================================
+I am sure this project has been done before but it would be a great project to
+get your hands dirty with. The idea is to create a dual channle switch mode
+power supply with much of the control done with an Adruino. It would be easy to
+implement a display for the voltage and current settings and actual voltage
+and current values. A basic relay board could be used and a couple of those
+large heat sinks I have lying around. 
+
+ 
+ Vehicle Tracker 
+=================
+This would use a GPS and a 3G/GSM module to track and report the location of a
+vehicle. It would be useful to have a serperate battery to the vehicle battery
+which also gets charged like the vehicle battery. You couls also include a 
+magnetometer, gyro and accellerometer and capture these for analysis.
+
+
+ Gyro Mouse
+============
+The idea here is to create give a standard mouse a few more axis of movement
+using a gyro, accel and a magnetometer. This could be used for gaming or in 3D
+design environments. Check out "Air Mouse"
+
+
+ Full RC chain
+===============
+This project is meant to create a full chain, from remote control to the RF
+link to the motor controller on a RC vehicle. It will use a Wii Nunchuk as the
+controller, a pair of NRF24L01s as the RF link and an arduino with a motor
+controller shield on the vehicle. There will also be an option to swap out the 
+NRF modules for a standard 433MHz RF link. Or even swap out the nunchuk for a 
+bluetooth link to your smart phone.
+
+
+ Arduino Phone
+===============
+The idea here is to replace a fixed-line telephone with an arduino based device
+which is connected to the home network and alowes phone calls to be make using
+an android device over the fixed-line network. Thie would require a device that
+can do ADC and DAC and can decode/encode DTMF. The Due could work for this but
+more investigation is requried. 
+
+
+ Arduino Oscilliscope
+======================
+Best to use a Due as is has a 12 bit ADC and runs at 84MHz as apposed to 10 bit
+and 16MHz. We need some software for this as well, best do this in Python. 
+This should be a fun project.
+
+
+
+
+
+
 
 
 
