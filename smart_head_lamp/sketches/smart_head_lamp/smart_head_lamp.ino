@@ -31,5 +31,5 @@ void setup() {
 // Main Program Loop
 //========================
 void loop() {
-  pollSensors();
+  //
 }

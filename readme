@@ -93,9 +93,15 @@ Best to use a Due as is has a 12 bit ADC and runs at 84MHz as apposed to 10 bit
 and 16MHz. We need some software for this as well, best do this in Python. 
 This should be a fun project.
 
+ Arduino Waveform/Signal/funtion Generator
+===========================================
+Best to use a Due as is has built in DACs, will have to determine the bitrate.  
 
 
-
+ Storm cloud lamp
+==================
+Cotton wool with leds inside controlled by an arduino to randomly light up. 
+Use a remote control to set the mode.
 
 
 

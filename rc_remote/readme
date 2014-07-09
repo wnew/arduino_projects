@@ -39,3 +39,12 @@ on the L293D IC. This shield supports stepper motors, servos and dc motors.
 3. Get the wireless link working
 4. Integrate the nunchuck and the motor shield
 5. Integrate the wireless link
+
+
+=================
+ Future Features
+=================
+Support standard RC remotes where the receiver is connected to an arduino and
+the arduino manages the trimming and rate control. The arduino will limit the
+amount of PWM channels.
+

@@ -1,0 +1,15 @@
+
+Button short press
+1. Off
+2. Static On
+3. Dynamic On 
+4. Strobe
+5. Red
+6. Red strobe
+
+Hold down button in Static mode
+changes brighness which stays where set
+
+Hold down button in Dynamic mode
+changes brighness which then tracks the ambient light
+
