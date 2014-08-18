@@ -1,0 +1,50 @@
+=========================================
+=========================================
+ Arduino Controlled Wireless Fencing Box
+=========================================
+=========================================
+
+=============
+ Description
+=============
+This project impements a wireless fencing scoring box using the HC-05 bluetooth
+modules for comms between the fencers and a control box.
+
+This is a more complex project then the basic fencing scoring box. As it will
+require syncronisation between the 2 wireless devices. The plan is to use the 4
+HC-05 bluetooth modules (1 for each fencer and 2 on the control box). They will
+need to be synced every minute or so. The control box will need 2 hardware
+serial interfaces so the processor wont have to manage any software serial
+buffers. either the Mega or the Due would be able to do this. The fencers
+modules will use a Pro Micro or Pro Mini and the HC-05. Need to test if we can
+handle 2 bluetooth modules on a arduino, that the bluetooth link is still good
+over 10m and that the syncronisation is good enough for millisecond accuracy. 
+
+
+================
+ Wireless Comms
+================
+The plan is to use the HC-05 Bluetooth module for comms between the fencers
+and the control box. A few things still need to be tested. 1. The range of the
+bluetooth needs to be better then 10m and, as there are 2 connections, we need
+to make sure that there is no interference between the 2. If the HC-05 doesnt
+meet these requirements there are other options like the NRF24L01 modules.
+
+
+======================
+ Implementation Steps
+======================
+1. Test indoor range of HC-05
+2. Test for collisions with multiple HC-05 connections
+3. Test syncronisation of remote devices
+
+
+=====================
+ Percentage Complete
+=====================
+
+         5%
+
+
+
+

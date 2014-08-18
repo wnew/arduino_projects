@@ -39,9 +39,9 @@
 //================
 // Global ojbects
 //================
-int mode              = OFF;
-int white_pulse_width = 0;
-int white_pw          = 0;
+int mode                 = OFF; // Keeps track of the current mode
+int last_press_time      = 0;   // Stores the last time the button was pressed
+int user_set_pulse_width = 255; // Stores the user configured pulse width
 
 //===============
 // Initial setup
@@ -63,15 +63,31 @@ void setup() {
 //=========================
 void buttonPressed () {
   //TODO: figure out if long press or short press
-  //TODO: if short press after a timeout then reset to OFF
-  if (mode < 7)
-    mode++;
-  else
-    mode = OFF;
+  
+  boolean longPress = 0;
+  int timeOut = (millis() - last_pressed) > TIMEOUT;
+
+  // long press
+  if (longPress) {
+    user_set_pulse_width = user_set_pulse_width++;
+    // change the brightness 
+  // short press
+  } else { 
+    if (!timeout) {
+      if (mode < 7)
+        mode++;
+      else
+        mode = OFF;
+    } else {
+      mode = OFF;
+    }
+  }
+
 #ifdef DEBUG
   Serial.println("Mode change");
   Serial.println(mode);
 #endif
+  last_pressed = millis();
 }
 
 //===========
@@ -79,17 +95,19 @@ void buttonPressed () {
 //===========
 void loop() {
   // Read the LDR
-  analogWrite (LEDPIN, (map(analogRead (LDRPIN),0,950,255,0)));
+  //analogWrite (LEDPIN, (map(analogRead (LDRPIN),0,950,255,0)));
+
+  int ldr_val = analogRead (LDRPIN);
 
   switch (mode) {
     case OFF:
       pulse_width = 0;
     break;
     case WHITEON:
-      pulse_width = 255;
+      pulse_width = user_set_pulse_width;
     break;
     case WHITEHALF:
-      pulse_width = 128;
+      pulse_width = user_set_pulse_width;
     break;
     case WHITETRACK:
       //TODO: impl tracking algorithm
@@ -110,7 +128,7 @@ void loop() {
       pulse_width = 0; 
   }
 
-  //analogWrite(LEDPIN, 255);
+  analogWrite(LEDPIN, pulseWidth);
 
   // Sometimes the number is over 255 or under 0 - rounding errors !!!!!
   //if (LDRValue < 0)   LDRValue = 0;

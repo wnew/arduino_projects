@@ -1,0 +1,28 @@
+==================
+==================
+ Storm Cloud Lamp
+==================
+==================
+
+=============
+ Description
+=============
+This sketch controls a lamp made of cotton wool that looks like a storm cloud.
+Every few seconds it flashes a yellow LED that makes it look like lightning in
+the cloud. There is also a blue LED which makes the cloud look like a dark
+storm could.
+
+
+==========
+ features
+==========
+- Yellow LED
+- Blue LED
+- Bluetooth, for control from smart phone
+
+
+=====================
+ Percentage Complete
+=====================
+
+         10%

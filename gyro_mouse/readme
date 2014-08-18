@@ -1,10 +1,17 @@
+============
+============
+ Gyro Mouse
+============
+============
+
 =============
  Description
 =============
 The intent of this project is to create a mouse that uses a gyroscope,
-accellerometer and a megnetometer to add more axis of motion to a conventional
+accellerometer and a magnetometer to add more axis of motion to a conventional
 mouse. The idea is to modify a standard optical mouse and to add an arduino
-pro micro to it.
+pro micro to it. This would aid designers and gamers providing them additional
+interfaces and funtionality.
 
 
 ============

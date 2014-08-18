@@ -8,7 +8,8 @@ This is a repo for all my random arduino projects
 =========================
 Arduino controlled home automation, maybe with a RaspPi or Due and Ethernet
 shield as the main control board. With wireless control from your android
-phone.
+phone. Remote arduino nodes with wireless transievers would control the 
+peripherals.
 
 
  Electriciy Management System
@@ -21,7 +22,8 @@ sensors. Use this data to optimise the usage.
 ========================
 Centralised music system which can play music in any room wirelessly, contolled
 via mobile phone. 
-Cell Phone -> Wireless to network -> Music Server -> Stream music to different rooms (How?)
+Cell Phone -> Wireless to network -> Music Server -> Stream music to different rooms
+This would be best achieved with a raspberry pi
 
 
  Media PC attached to TV
@@ -41,6 +43,11 @@ Monitor battery charge
 ================================
 This is a basic fencing scoring box controlled by an Arduino. It is used to 
 sense when a touch is made in a fencing bout.
+
+
+ Arduino Controlled Wireless Fencing Box
+=========================================
+This is a more complex project then the basic fencing scoring box. As it will require syncronisation between the 2 wireless devices. The plan is to use the 4 HC-05 bluetooth modules (1 for each fencer and 2 on the control box). They will need to be synced every minute or so. The control box will need 2 hardware serial interfaces so the processor wont have to manage any software serial buffers. either the Mega or the Due would be able to do this. The fencers modules will use a Pro Micro or Pro Mini and the HC-05. Need to test if we can handle 2 bluetooth modules on a arduino, that the bluetooth link is still good over 10m and that the syncronisation is good enough for millisecond accuracy. 
 
 
  Arduino Controlled Switch Mode Power Supply
@@ -104,6 +111,21 @@ Cotton wool with leds inside controlled by an arduino to randomly light up.
 Use a remote control to set the mode.
 
 
+ Cricket Bowling Machine
+=========================
+This machine consistis of a couple of 'wheels' which grip a ball and throw it.
+The speed of the wheels contoll the spin/swing of the ball and can be adjusted
+via the arduino.
 
+
+ Bluetooth Arduino Programmer Module
+=====================================
+The idea here is to have a bluetooth board which can be plugged into an arduino and used to program it. This can be done with the standard HC-05 and a few components.
+
+
+
+ Some other idea which I forget right now
+==========================================
+Blah blah blah
 
 

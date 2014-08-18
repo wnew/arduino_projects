@@ -1,10 +1,12 @@
 //===========================================================================//
 //===========================================================================//
 //                                                                           //
-//    Sketch: Smart Head Lamp                                                //
+//    Sketch: Wireless fencing box: Fencer device                            //
 //    Date: 2014                                                             //
-//    Description: This sketch will control a smart head lamp                //
+//    Description: This sketch is the remote device for the wireless fencing //
+//                 scoring box                                               //
 //                                                                           //
+//    Notes: This is just the skeleton code for now                          //
 //                                                                           //
 //===========================================================================//
 //===========================================================================//

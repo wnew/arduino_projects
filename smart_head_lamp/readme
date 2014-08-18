@@ -1,13 +1,41 @@
-This sketch is meant to control a smart headlamp.
+=================
+=================
+ Smart Head Lamp
+=================
+=================
 
-Work on this hasonly just started
+=============
+ Description
+=============
+This sketch is meant to control a smart headlamp. It will measure ambient light
+and can adjust the brightness of the LEDs automatically.
 
 
-features
+==========
+ features
+==========
 - Strobe mode
 - Ambient light following mode
 - Wide beam
 - Narrow beam
 - Red light
 - Battery monitor
- 
+
+
+=======
+ Modes
+=======
+Off
+White On
+White Half
+White Track
+White Strobe
+Red On
+Red Strobe
+
+
+=====================
+ Percentage Complete
+=====================
+
+         10%
