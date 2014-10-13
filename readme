@@ -122,6 +122,10 @@ via the arduino.
 =====================================
 The idea here is to have a bluetooth board which can be plugged into an arduino and used to program it. This can be done with the standard HC-05 and a few components.
 
+ Arduino Controlled RGB Strobe Light
+=====================================
+Pretty obvious
+
 
 
  Some other idea which I forget right now
