@@ -100,6 +100,7 @@ Best to use a Due as is has a 12 bit ADC and runs at 84MHz as apposed to 10 bit
 and 16MHz. We need some software for this as well, best do this in Python. 
 This should be a fun project.
 
+
  Arduino Waveform/Signal/funtion Generator
 ===========================================
 Best to use a Due as is has built in DACs, will have to determine the bitrate.  
@@ -122,10 +123,14 @@ via the arduino.
 =====================================
 The idea here is to have a bluetooth board which can be plugged into an arduino and used to program it. This can be done with the standard HC-05 and a few components.
 
+
  Arduino Controlled RGB Strobe Light
 =====================================
 Pretty obvious
 
+ Wireless light switches
+=====================================
+The ESP8266 is an amazing little module, it even has a small micro on board so no need for an Arduino. If we connect a relay to this device and a small 220v power supply we can very easily create a wireless light switch or anything else for that matter.
 
 
  Some other idea which I forget right now
